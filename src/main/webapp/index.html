@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ticket Management System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        
+        h1 {
+            color: #333;
+            display: flex;
+            justify-content: center;
+        }
+        
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 400px;
+            margin: 0 auto;
+        }
+        
+        label {
+            font-weight: bold;
+        }
+        
+        input[type="text"],
+        input[type="date"],
+        select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        
+        input[type="radio"] {
+            margin-right: 5px;
+        }
+        
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            display: block;
+            margin: 0 auto; 
+        }
+        
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Ticket Management System</h1>
+        <form action="TicketServlet" method="post">
+            <label for="passengerName">Passenger Name:</label><br>
+            <input type="text" id="passengerName" name="passengerName" required><br><br>
+
+            <label for="age">Age:</label><br>
+            <input type="text" id="age" name="age" required><br><br>
+
+            <label for="stationFrom">Station From:</label><br>
+            <select id="stationFrom" name="stationFrom" required>
+                <option value="">Choose Station</option>
+                <option value="Delhi">DELHI</option>
+                <option value="Mumbai">MUMBAI</option>
+                <option value="Kolkata">KOLKATA</option>
+                <option value="Hyderabad">HYDERABAD</option>
+                <option value="Other">Other</option>
+            </select><br>
+            <input type="text" id="stationFromOther" name="stationFromOther" placeholder="Enter custom station" style="display:none;"><br><br>
+
+            <label for="stationTo">Station To:</label><br>
+            <select id="stationTo" name="stationTo" required>
+                <option value="">Choose Station</option>
+                <option value="Delhi">DELHI</option>
+                <option value="Mumbai">MUMBAI</option>
+                <option value="Kolkata">KOLKATA</option>
+                <option value="Hyderabad">HYDERABAD</option>
+                <option value="Other">Other</option>
+            </select><br>
+            <input type="text" id="stationToOther" name="stationToOther" placeholder="Enter custom station" style="display:none;"><br><br>
+
+            <label>Indian?</label><br>
+            <input type="radio" id="indianYes" name="indian" value="YES" required>
+            <label for="indianYes">YES</label>
+            <input type="radio" id="indianNo" name="indian" value="NO">
+            <label for="indianNo">NO</label><br><br>
+
+            <label>Meal:</label><br>
+            <input type="radio" id="veg" name="meal" value="VEG" required>
+            <label for="veg">VEG</label>
+            <input type="radio" id="nonVeg" name="meal" value="NON VEG">
+            <label for="nonVeg">NON VEG</label><br><br>
+
+            <label for="journeyDate">Journey Date:</label><br>
+            <input type="date" id="journeyDate" name="journeyDate" required><br><br>
+
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</body>
+</html>
